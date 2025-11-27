@@ -1,0 +1,13 @@
+{
+  "p1": [
+    { "stage": "Raw Material", "emissionsKg": 120, "location": "India", "timestamp": "2025-01-15T08:00:00Z" },
+    { "stage": "Manufacturing", "emissionsKg": 450, "location": "Bangladesh", "timestamp": "2025-02-10T09:00:00Z" },
+    { "stage": "Distribution", "emissionsKg": 230, "location": "UAE", "timestamp": "2025-03-05T03:00:00Z" },
+    { "stage": "Retail", "emissionsKg": 80, "location": "India", "timestamp": "2025-03-20T10:00:00Z" }
+  ],
+  "p2": [
+    { "stage": "Raw Material", "emissionsKg": 90, "location": "India", "timestamp": "2025-01-22T08:00:00Z" },
+    { "stage": "Manufacturing", "emissionsKg": 350, "location": "Bangladesh", "timestamp": "2025-02-14T09:00:00Z" },
+    { "stage": "Distribution", "emissionsKg": 150, "location": "UAE", "timestamp": "2025-03-07T03:00:00Z" }
+  ]
+}

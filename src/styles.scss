@@ -1,0 +1,796 @@
+/* ============================================
+   Green Supply Chain Tracker - Global Styles
+   Angular 18 Portfolio Project
+   ============================================ */
+
+/* ============================================
+   CSS Custom Properties (Design Tokens)
+   ============================================ */
+:root {
+	/* Brand Colors */
+	--primary: #00A86B; /* Green (sustainability) */
+	--primary-light: #10B981;
+	--primary-dark: #059669;
+	--secondary: #1E3A8A; /* Blue (trust/tech) */
+	--secondary-light: #3B82F6;
+	--secondary-dark: #1E40AF;
+	--accent: #F59E0B; /* Orange (alerts/warnings) */
+	--accent-light: #FBBF24;
+	--danger: #EF4444;
+	--success: #10B981;
+	--warning: #F59E0B;
+	--info: #3B82F6;
+
+	/* Neutral Colors */
+	--background: #F9FAFB;
+	--background-alt: #F3F4F6;
+	--card-bg: #FFFFFF;
+	--text-primary: #111827;
+	--text-secondary: #6B7280;
+	--text-muted: #9CA3AF;
+	--border-color: #E5E7EB;
+	--border-light: #F3F4F6;
+
+	/* Effects */
+	--glass: rgba(255,255,255,0.5);
+	--shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+	--shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+	--shadow-md: 0 6px 20px rgba(16,24,40,0.06);
+	--shadow-lg: 0 10px 30px rgba(16,24,40,0.1);
+	--shadow-xl: 0 20px 50px rgba(16,24,40,0.15);
+
+	/* Spacing */
+	--spacing-xs: 0.25rem;
+	--spacing-sm: 0.5rem;
+	--spacing-md: 1rem;
+	--spacing-lg: 1.5rem;
+	--spacing-xl: 2rem;
+	--spacing-2xl: 3rem;
+
+	/* Border Radius */
+	--radius-sm: 4px;
+	--radius: 8px;
+	--radius-md: 10px;
+	--radius-lg: 12px;
+	--radius-xl: 16px;
+	--radius-full: 9999px;
+
+	/* Transitions */
+	--transition-fast: 150ms ease;
+	--transition: 250ms ease;
+	--transition-slow: 350ms ease;
+}
+
+/* ============================================
+   Base Styles & Reset
+   ============================================ */
+* {
+	box-sizing: border-box;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+	background: var(--background);
+	color: var(--text-primary);
+	margin: 0;
+	padding: 0;
+	line-height: 1.6;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 0 0 var(--spacing-md) 0;
+	font-weight: 600;
+	line-height: 1.3;
+	color: var(--text-primary);
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.5rem; }
+h4 { font-size: 1.25rem; }
+h5 { font-size: 1.125rem; }
+h6 { font-size: 1rem; }
+
+p {
+	margin: 0 0 var(--spacing-md) 0;
+}
+
+a {
+	color: var(--primary);
+	text-decoration: none;
+	transition: color var(--transition);
+}
+
+a:hover {
+	color: var(--primary-dark);
+}
+
+button {
+	font-family: inherit;
+	cursor: pointer;
+}
+
+input, textarea, select {
+	font-family: inherit;
+}
+
+/* ============================================
+   Layout Utilities
+   ============================================ */
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: var(--spacing-md);
+	width: 100%;
+}
+
+.container-sm {
+	max-width: 800px;
+	margin: 0 auto;
+	padding: var(--spacing-md);
+}
+
+.container-lg {
+	max-width: 1400px;
+	margin: 0 auto;
+	padding: var(--spacing-md);
+}
+
+/* Flexbox Utilities */
+.row {
+	display: flex;
+	gap: var(--spacing-md);
+	align-items: flex-start;
+}
+
+.row-center {
+	display: flex;
+	gap: var(--spacing-md);
+	align-items: center;
+}
+
+.row-between {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: var(--spacing-md);
+}
+
+.col {
+	flex: 1;
+	min-width: 0; /* Prevents flex items from overflowing */
+}
+
+.col-auto {
+	flex: 0 0 auto;
+}
+
+/* Grid Utilities */
+.grid {
+	display: grid;
+	gap: var(--spacing-md);
+}
+
+.grid-2 {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: var(--spacing-md);
+}
+
+.grid-3 {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: var(--spacing-md);
+}
+
+.grid-4 {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: var(--spacing-md);
+}
+
+/* ============================================
+   Card Components
+   ============================================ */
+.card {
+	background: var(--card-bg);
+	border-radius: var(--radius-md);
+	padding: var(--spacing-lg);
+	box-shadow: var(--shadow-md);
+	transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.card:hover {
+	transform: translateY(-2px);
+	box-shadow: var(--shadow-lg);
+}
+
+.card-flat {
+	background: var(--card-bg);
+	border-radius: var(--radius-md);
+	padding: var(--spacing-lg);
+	border: 1px solid var(--border-color);
+}
+
+.card-interactive {
+	cursor: pointer;
+	transition: all var(--transition);
+}
+
+.card-interactive:hover {
+	transform: translateY(-4px);
+	box-shadow: var(--shadow-xl);
+}
+
+/* ============================================
+   Button Styles
+   ============================================ */
+.btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: var(--spacing-sm);
+	padding: 0.625rem 1.25rem;
+	border-radius: var(--radius);
+	font-weight: 600;
+	font-size: 0.875rem;
+	text-decoration: none;
+	border: none;
+	cursor: pointer;
+	transition: all var(--transition);
+	white-space: nowrap;
+}
+
+.btn-primary {
+	background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+	color: white;
+	box-shadow: var(--shadow);
+}
+
+.btn-primary:hover {
+	transform: translateY(-2px);
+	box-shadow: var(--shadow-lg);
+	background: linear-gradient(135deg, var(--primary-light), var(--primary));
+}
+
+.btn-secondary {
+	background: linear-gradient(135deg, var(--secondary), var(--secondary-dark));
+	color: white;
+	box-shadow: var(--shadow);
+}
+
+.btn-secondary:hover {
+	transform: translateY(-2px);
+	box-shadow: var(--shadow-lg);
+}
+
+.btn-ghost {
+	background: transparent;
+	border: 1px solid var(--border-color);
+	color: var(--text-primary);
+}
+
+.btn-ghost:hover {
+	background: var(--background-alt);
+	border-color: var(--primary);
+	color: var(--primary);
+}
+
+.btn-outline {
+	background: transparent;
+	border: 2px solid var(--primary);
+	color: var(--primary);
+}
+
+.btn-outline:hover {
+	background: var(--primary);
+	color: white;
+}
+
+.btn-sm {
+	padding: 0.375rem 0.875rem;
+	font-size: 0.8125rem;
+}
+
+.btn-lg {
+	padding: 0.875rem 1.75rem;
+	font-size: 1rem;
+}
+
+/* ============================================
+   Typography Utilities
+   ============================================ */
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+.text-primary { color: var(--primary); }
+.text-secondary { color: var(--secondary); }
+.text-muted { color: var(--text-muted); }
+.text-danger { color: var(--danger); }
+.text-success { color: var(--success); }
+.text-warning { color: var(--warning); }
+
+.muted { color: var(--text-secondary); }
+
+.font-bold { font-weight: 700; }
+.font-semibold { font-weight: 600; }
+.font-medium { font-weight: 500; }
+.font-normal { font-weight: 400; }
+
+.text-sm { font-size: 0.875rem; }
+.text-base { font-size: 1rem; }
+.text-lg { font-size: 1.125rem; }
+.text-xl { font-size: 1.25rem; }
+.text-2xl { font-size: 1.5rem; }
+
+/* ============================================
+   Spacing Utilities
+   ============================================ */
+.m-0 { margin: 0; }
+.mt-1 { margin-top: var(--spacing-sm); }
+.mt-2 { margin-top: var(--spacing-md); }
+.mt-3 { margin-top: var(--spacing-lg); }
+.mt-4 { margin-top: var(--spacing-xl); }
+
+.mb-1 { margin-bottom: var(--spacing-sm); }
+.mb-2 { margin-bottom: var(--spacing-md); }
+.mb-3 { margin-bottom: var(--spacing-lg); }
+.mb-4 { margin-bottom: var(--spacing-xl); }
+
+.p-0 { padding: 0; }
+.p-1 { padding: var(--spacing-sm); }
+.p-2 { padding: var(--spacing-md); }
+.p-3 { padding: var(--spacing-lg); }
+.p-4 { padding: var(--spacing-xl); }
+
+/* ============================================
+   Animations & Keyframes
+   ============================================ */
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+		transform: translateY(10px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes fadeInUp {
+	from {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes fadeInDown {
+	from {
+		opacity: 0;
+		transform: translateY(-20px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes slideInLeft {
+	from {
+		opacity: 0;
+		transform: translateX(-30px);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+@keyframes slideInRight {
+	from {
+		opacity: 0;
+		transform: translateX(30px);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+@keyframes scaleIn {
+	from {
+		opacity: 0;
+		transform: scale(0.9);
+	}
+	to {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+
+@keyframes pulse {
+	0%, 100% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0.5;
+	}
+}
+
+@keyframes spin {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+/* Animation Classes */
+.fade-in {
+	animation: fadeIn 500ms ease both;
+}
+
+.fade-in-up {
+	animation: fadeInUp 600ms ease both;
+}
+
+.fade-in-down {
+	animation: fadeInDown 600ms ease both;
+}
+
+.slide-in-left {
+	animation: slideInLeft 500ms ease both;
+}
+
+.slide-in-right {
+	animation: slideInRight 500ms ease both;
+}
+
+.scale-in {
+	animation: scaleIn 400ms ease both;
+}
+
+/* Staggered Animations */
+.stagger-1 { animation-delay: 100ms; }
+.stagger-2 { animation-delay: 200ms; }
+.stagger-3 { animation-delay: 300ms; }
+.stagger-4 { animation-delay: 400ms; }
+.stagger-5 { animation-delay: 500ms; }
+
+/* ============================================
+   Loading States
+   ============================================ */
+.loading {
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	border: 3px solid var(--border-color);
+	border-top-color: var(--primary);
+	border-radius: 50%;
+	animation: spin 800ms linear infinite;
+}
+
+.loading-lg {
+	width: 40px;
+	height: 40px;
+	border-width: 4px;
+}
+
+.skeleton {
+	background: linear-gradient(90deg, var(--background-alt) 25%, var(--border-light) 50%, var(--background-alt) 75%);
+	background-size: 200% 100%;
+	animation: pulse 1.5s ease-in-out infinite;
+	border-radius: var(--radius);
+}
+
+/* ============================================
+   Hero Section
+   ============================================ */
+.hero {
+	padding: var(--spacing-2xl) 0;
+	background: linear-gradient(180deg, rgba(0,168,107,0.08), rgba(30,58,138,0.03));
+	border-radius: var(--radius-lg);
+	margin-bottom: var(--spacing-xl);
+}
+
+.hero h1 {
+	font-size: 2.5rem;
+	margin-bottom: var(--spacing-md);
+	background: linear-gradient(135deg, var(--primary), var(--secondary));
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+}
+
+.hero .lead {
+	font-size: 1.125rem;
+	color: var(--text-secondary);
+	margin-bottom: var(--spacing-lg);
+	max-width: 600px;
+}
+
+.hero .actions {
+	display: flex;
+	gap: var(--spacing-md);
+	flex-wrap: wrap;
+}
+
+/* ============================================
+   Badge & Tag Components
+   ============================================ */
+.badge {
+	display: inline-flex;
+	align-items: center;
+	padding: 0.25rem 0.75rem;
+	border-radius: var(--radius-full);
+	font-size: 0.75rem;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+}
+
+.badge-primary {
+	background: rgba(0, 168, 107, 0.1);
+	color: var(--primary-dark);
+}
+
+.badge-secondary {
+	background: rgba(30, 58, 138, 0.1);
+	color: var(--secondary-dark);
+}
+
+.badge-success {
+	background: rgba(16, 185, 129, 0.1);
+	color: var(--success);
+}
+
+.badge-warning {
+	background: rgba(245, 158, 11, 0.1);
+	color: var(--warning);
+}
+
+.badge-danger {
+	background: rgba(239, 68, 68, 0.1);
+	color: var(--danger);
+}
+
+/* ============================================
+   Metrics & Stats
+   ============================================ */
+.metrics {
+	display: flex;
+	gap: var(--spacing-md);
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.metric-card {
+	flex: 1;
+	min-width: 200px;
+	padding: var(--spacing-lg);
+	background: var(--card-bg);
+	border-radius: var(--radius-md);
+	box-shadow: var(--shadow-md);
+}
+
+.metric-value {
+	font-size: 2rem;
+	font-weight: 700;
+	color: var(--primary);
+	margin-bottom: var(--spacing-xs);
+}
+
+.metric-label {
+	font-size: 0.875rem;
+	color: var(--text-secondary);
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+}
+
+/* ============================================
+   Form Elements
+   ============================================ */
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="search"],
+textarea,
+select {
+	width: 100%;
+	padding: 0.625rem 1rem;
+	border: 1px solid var(--border-color);
+	border-radius: var(--radius);
+	font-size: 0.875rem;
+	transition: all var(--transition);
+	background: var(--card-bg);
+	color: var(--text-primary);
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+	outline: none;
+	border-color: var(--primary);
+	box-shadow: 0 0 0 3px rgba(0, 168, 107, 0.1);
+}
+
+label {
+	display: block;
+	margin-bottom: var(--spacing-xs);
+	font-weight: 500;
+	color: var(--text-primary);
+	font-size: 0.875rem;
+}
+
+/* ============================================
+   Responsive Design
+   ============================================ */
+@media (max-width: 1024px) {
+	.container {
+		padding: var(--spacing-md);
+	}
+
+	.grid-4 {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media (max-width: 768px) {
+	h1 { font-size: 2rem; }
+	h2 { font-size: 1.75rem; }
+	h3 { font-size: 1.25rem; }
+
+	.row,
+	.row-center,
+	.row-between {
+		flex-direction: column;
+		align-items: stretch;
+	}
+
+	.grid-2,
+	.grid-3,
+	.grid-4 {
+		grid-template-columns: 1fr;
+	}
+
+	.hero h1 {
+		font-size: 2rem;
+	}
+
+	.hero .actions {
+		flex-direction: column;
+	}
+
+	.btn {
+		width: 100%;
+		justify-content: center;
+	}
+}
+
+@media (max-width: 480px) {
+	.container {
+		padding: var(--spacing-sm);
+	}
+
+	h1 { font-size: 1.75rem; }
+	h2 { font-size: 1.5rem; }
+
+	.card {
+		padding: var(--spacing-md);
+	}
+}
+
+/* ============================================
+   External Library Imports
+   ============================================ */
+/* Leaflet map styles */
+@import 'leaflet/dist/leaflet.css';
+
+/* Angular Material prebuilt theme */
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+
+/* ============================================
+   Material UI Customizations
+   ============================================ */
+.mat-toolbar {
+	background: linear-gradient(90deg, var(--primary), var(--secondary)) !important;
+	color: white !important;
+}
+
+.mat-mdc-card,
+.mat-card {
+	background: var(--card-bg) !important;
+	border-radius: var(--radius-lg) !important;
+	box-shadow: var(--shadow-md) !important;
+}
+
+.mat-mdc-button,
+.mat-button {
+	border-radius: var(--radius) !important;
+}
+
+.mat-icon {
+	vertical-align: middle;
+}
+
+.mat-mdc-form-field {
+	width: 100%;
+}
+
+/* Navigation brand styling */
+.brand {
+	font-weight: 700;
+	display: flex;
+	align-items: center;
+	gap: var(--spacing-sm);
+	color: white;
+	text-decoration: none;
+	transition: opacity var(--transition);
+}
+
+.brand:hover {
+	opacity: 0.9;
+}
+
+.brand .mat-icon {
+	font-size: 24px;
+	width: 24px;
+	height: 24px;
+}
+
+/* ============================================
+   Utility Classes
+   ============================================ */
+.hidden { display: none !important; }
+.visible { display: block !important; }
+
+.overflow-hidden { overflow: hidden; }
+.overflow-auto { overflow: auto; }
+
+.cursor-pointer { cursor: pointer; }
+.cursor-not-allowed { cursor: not-allowed; }
+
+.select-none { user-select: none; }
+
+.w-full { width: 100%; }
+.h-full { height: 100%; }
+
+.rounded { border-radius: var(--radius); }
+.rounded-lg { border-radius: var(--radius-lg); }
+.rounded-full { border-radius: var(--radius-full); }
+
+.shadow { box-shadow: var(--shadow); }
+.shadow-md { box-shadow: var(--shadow-md); }
+.shadow-lg { box-shadow: var(--shadow-lg); }
+.shadow-none { box-shadow: none; }
+
+/* ============================================
+   Print Styles
+   ============================================ */
+@media print {
+	.no-print {
+		display: none !important;
+	}
+
+	body {
+		background: white;
+	}
+
+	.card {
+		box-shadow: none;
+		border: 1px solid var(--border-color);
+	}
+}
+

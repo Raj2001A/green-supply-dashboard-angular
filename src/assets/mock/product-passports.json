@@ -1,0 +1,22 @@
+[
+  {
+    "id": "pp1",
+    "productId": "p1",
+    "serial": "GV-2025-0001",
+    "origin": { "country": "India", "city": "Bhubaneswar", "lat": 20.2961, "lng": 85.8245 },
+    "materials": ["Recycled Cotton", "Biobased Dye"],
+    "certifications": ["GOTS", "FairTrade"],
+    "blockchainVerified": true,
+    "sustainabilityScore": 86
+  },
+  {
+    "id": "pp2",
+    "productId": "p2",
+    "serial": "EA-2025-0002",
+    "origin": { "country": "Bangladesh", "city": "Dhaka", "lat": 23.8103, "lng": 90.4125 },
+    "materials": ["Organic Cotton", "Recycled PET"],
+    "certifications": ["OEKO-TEX"],
+    "blockchainVerified": false,
+    "sustainabilityScore": 72
+  }
+]
