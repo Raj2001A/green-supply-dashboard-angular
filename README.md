@@ -191,17 +191,6 @@ npm run e2e
 - Implement reactive, validation-rich forms for supplier CRUD operations
 - Add unit & e2e tests to verify key flows
 
----
 
-If you'd like I can keep building the 24–48 hour fully-featured version (charts, maps, modals, advanced filtering, CSV/PDF export) — tell me which features you want prioritized and I’ll continue.
 
-## 📸 Screenshots
-
-Below are example screenshots for the key features — replace these with real screenshots from your local runs or a production deployment for your repo.
-
-![Dashboard](src/assets/screenshots/screenshot-dashboard.svg)
-
-![Product Passport](src/assets/screenshots/screenshot-passport.svg)
-
-![Suppliers](src/assets/screenshots/screenshot-suppliers.svg)
 
