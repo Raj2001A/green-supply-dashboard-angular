@@ -38,6 +38,26 @@ git push -u origin main
 If you want me to create the remote for you, provide the method (GitHub `gh` CLI is easiest) or a personal access token (do NOT paste tokens into the chat; run the `gh` or `curl` command locally instead).
 
 License: MIT
+
+Netlify deploy
+
+1. In the Netlify dashboard click "New site from Git" and connect your GitHub account.
+2. Pick the repository `Raj2001A/green-supply-dashboard-angular`.
+3. Set the build command to:
+
+```bash
+npm run build
+```
+
+4. Set the publish directory to:
+
+```
+dist/sustainable-ai-dashboard
+```
+
+I added `netlify.toml` which configures the same values and sets a SPA redirect, so Netlify will detect the settings automatically when you connect the repo.
+
+Tip: After deploying, enable deploy previews for PRs in Netlify to share staging URLs with interviewers.
 # 🌱 Green Supply Chain Tracker
 
 > **An Angular 18 portfolio project demonstrating modern frontend development skills**
