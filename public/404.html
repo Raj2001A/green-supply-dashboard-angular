@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Redirecting…</title>
+    <script>
+      // Load index.html and inject it so Angular can handle the current URL (SPA fallback)
+      (function(){
+        fetch('/index.html', {cache: 'no-store'}).then(function(r){ return r.text(); }).then(function(html){
+          document.open(); document.write(html); document.close();
+          // Keep the current URL so Angular router can read it
+          try { history.replaceState({}, '', location.pathname + location.search + location.hash); } catch(e) {}
+        }).catch(function(){
+          // Fallback to root
+          window.location.replace('/');
+        });
+      })();
+    </script>
+  </head>
+  <body>
+    Redirecting…
+  </body>
+</html>
