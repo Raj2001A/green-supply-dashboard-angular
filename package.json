@@ -10,6 +10,9 @@
     "serve:ssr:sustainable-ai-dashboard": "node dist/sustainable-ai-dashboard/server/server.mjs"
   },
   "private": true,
+  "engines": {
+    "node": "^18.0.0 || ^18"
+  },
   "dependencies": {
     "@angular/animations": "^18.2.0",
     "@angular/common": "^18.2.0",
