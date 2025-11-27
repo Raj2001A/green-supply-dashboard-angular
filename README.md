@@ -1,3 +1,43 @@
+# Green Supply Dashboard (Sustainable AI Dashboard)
+
+Small Angular demo app showcasing supply-chain timeline, carbon tracking, product passports (QR), supplier management, and analytics.
+
+Features
+- Angular 18 standalone components
+- Angular Material UI
+- Chart.js (ng2-charts)
+- Leaflet maps (dynamic import)
+- QR code generation
+- Mock API via JSON in `src/assets/mock`
+
+Local development
+
+Install dependencies and start dev server:
+
+```powershell
+Set-Location "f:\Angular project\Green supply dashboard"
+npm install
+npm run start
+```
+
+Create GitHub repository and push (example using `gh`):
+
+```bash
+gh repo create Raj2001A/green-supply-dashboard --public --source=. --remote=origin --push
+```
+
+Or create via API with a token (replace $GH_TOKEN):
+
+```bash
+curl -H "Authorization: token $GH_TOKEN" -d '{"name":"green-supply-dashboard","private":false}' https://api.github.com/user/repos
+git remote add origin https://github.com/Raj2001A/green-supply-dashboard.git
+git branch -M main
+git push -u origin main
+```
+
+If you want me to create the remote for you, provide the method (GitHub `gh` CLI is easiest) or a personal access token (do NOT paste tokens into the chat; run the `gh` or `curl` command locally instead).
+
+License: MIT
 # 🌱 Green Supply Chain Tracker
 
 > **An Angular 18 portfolio project demonstrating modern frontend development skills**
