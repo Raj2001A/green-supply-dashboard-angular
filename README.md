@@ -1,4 +1,4 @@
-# Green Supply Dashboard (Sustainable AI Dashboard)
+# Green Supply Dashboard (Angular)
 
 Small Angular demo app showcasing supply-chain timeline, carbon tracking, product passports (QR), supplier management, and analytics.
 
@@ -204,3 +204,4 @@ Below are example screenshots for the key features — replace these with real s
 ![Product Passport](src/assets/screenshots/screenshot-passport.svg)
 
 ![Suppliers](src/assets/screenshots/screenshot-suppliers.svg)
+
