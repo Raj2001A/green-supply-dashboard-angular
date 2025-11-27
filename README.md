@@ -58,6 +58,27 @@ dist/sustainable-ai-dashboard
 I added `netlify.toml` which configures the same values and sets a SPA redirect, so Netlify will detect the settings automatically when you connect the repo.
 
 Tip: After deploying, enable deploy previews for PRs in Netlify to share staging URLs with interviewers.
+
+Continuous Integration (GitHub Actions)
+
+This repository now includes a GitHub Actions workflow that runs on push and pull-request to `main`. It installs dependencies with `npm ci` and runs `npm run build`, then verifies the browser build output exists.
+
+Badge (will show after the first successful run):
+
+```
+[![CI](https://github.com/Raj2001A/green-supply-dashboard-angular/actions/workflows/ci.yml/badge.svg)](https://github.com/Raj2001A/green-supply-dashboard-angular/actions/workflows/ci.yml)
+```
+
+Netlify: disable Angular Runtime plugin (recommended for static SPA)
+
+If Netlify added the `@netlify/angular-runtime` plugin for SSR, it may interfere with serving the SPA index on deep links. Recommended actions:
+
+1. Open Netlify → Site → Settings → Build & deploy → Plugins.
+2. If `@netlify/angular-runtime` is listed, remove or disable it.
+3. Trigger a fresh deploy and choose "Clear cache and deploy site" in Deploys → Trigger deploy.
+
+If you cannot remove the plugin from the UI, disable SSR behavior by ensuring your build outputs static browser files at `dist/sustainable-ai-dashboard/browser` and keep `_redirects`, `public/200.html`, and `public/404.html` in the repo (already present).
+
 # 🌱 Green Supply Chain Tracker
 
 > **An Angular 18 portfolio project demonstrating modern frontend development skills**
