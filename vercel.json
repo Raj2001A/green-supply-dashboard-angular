@@ -4,12 +4,7 @@
     {
       "src": "package.json",
       "use": "@vercel/static-build",
-      "config": { "distDir": "dist/sustainable-ai-dashboard/browser" }
+      "config": { "distDir": "dist/sustainable-ai-dashboard/browser/browser" }
     }
-  ],
-  "routes": [
-    { "handle": "filesystem" },
-    { "src": "^/(.*)$", "dest": "/browser/index" }
-  ],
-  "cleanUrls": true
+  ]
 }
