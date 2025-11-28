@@ -8,7 +8,7 @@
     }
   ],
   "rewrites": [
-    { "source": "\/(.*)", "destination": "/browser/index.html" }
+    { "source": "\/(.*)", "destination": "/browser/index" }
   ],
   "cleanUrls": true
 }
