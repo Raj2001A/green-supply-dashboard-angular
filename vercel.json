@@ -7,8 +7,9 @@
       "config": { "distDir": "dist/sustainable-ai-dashboard/browser" }
     }
   ],
-  "rewrites": [
-    { "source": "\/(.*)", "destination": "/browser/index" }
+  "routes": [
+    { "handle": "filesystem" },
+    { "src": "^/(.*)$", "dest": "/browser/index" }
   ],
   "cleanUrls": true
 }
